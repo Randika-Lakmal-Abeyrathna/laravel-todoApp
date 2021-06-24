@@ -16,10 +16,14 @@
             <h1>Daily Task</h1>
             <div class="row">
                 <div class="col-md-12">
-                    <input type="text" class="form-control" name="task" placeholder="Enter your task">
-                    <br>
-                    <input type="text" class="btn btn-warning" value="Clear">
-                    <input type="text" class="btn btn-primary" value="Save">
+                    <form action="/savetask" method="post">
+                        {{csrf_field()}}
+                        <input type="text" class="form-control" name="task" placeholder="Enter your task">
+                        <br>
+                        <input type="text" class="btn btn-warning" value="Clear">
+                        <input type="submit" class="btn btn-primary" value="Save">
+                    </form>
+
                 </div>
             </div>
             <!-- table -->
