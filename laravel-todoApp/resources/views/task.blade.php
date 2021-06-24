@@ -16,8 +16,16 @@
             <h1>Daily Task</h1>
             <div class="row">
                 <div class="col-md-12">
+
+                    @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{$error}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endforeach
+
                     <form action="/savetask" method="post">
-                        {{csrf_field()}}
+                        @csrf
                         <input type="text" class="form-control" name="task" placeholder="Enter your task">
                         <br>
                         <input type="text" class="btn btn-warning" value="Clear">
