@@ -18,8 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/task', function () {
-    return view('task');
-});
+Route::get('/task', [TaskController::class, 'loadPage']);
 
 Route::post('/savetask', [TaskController::class, 'saveData']);

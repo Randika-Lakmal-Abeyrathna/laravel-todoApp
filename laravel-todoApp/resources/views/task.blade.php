@@ -42,11 +42,13 @@
                     <th>Task</th>
                     <th>Completed</th>
                     <tbody>
+                        @foreach ($tasks as $task)
                         <tr>
-                            <td>1</td>
-                            <td>Test Item</td>
-                            <td>Pending</td>
+                            <td>{{$task->id}}</td>
+                            <td>{{$task->task}}</td>
+                            <td>{{$task->iscompleted}}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
