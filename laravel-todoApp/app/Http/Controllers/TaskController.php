@@ -54,4 +54,27 @@ class TaskController extends Controller
 
         return redirect()->back();
     }
+
+    public function getUpdateData($id)
+    {
+        $task = task::find($id);
+
+        return view('updatetask')->with('task', $task);
+    }
+
+    public function updateTask(Request $request)
+    {
+
+        $this->validate($request, [
+            'task' => 'required|max:100|min:5',
+        ]);
+
+
+        $task = task::find($request->id);
+        $task->task = $request->task;
+
+        $task->save();
+
+        return redirect('/task');
+    }
 }

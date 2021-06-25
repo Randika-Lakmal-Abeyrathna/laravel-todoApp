@@ -27,3 +27,7 @@ Route::get('/markaspending/{id}', [TaskController::class, 'pending']);
 Route::get('/markascompleted/{id}', [TaskController::class, 'complete']);
 
 Route::get('/deletetask/{id}', [TaskController::class, 'deleteTask']);
+
+Route::get('/updatetask/{id}', [TaskController::class, 'getUpdateData']);
+
+Route::post('/update', [TaskController::class, 'updateTask']);

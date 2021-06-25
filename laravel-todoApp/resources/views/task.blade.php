@@ -43,6 +43,7 @@
                     <th>Completed</th>
                     <th></th>
                     <th></th>
+                    <th></th>
                     <tbody>
                         @foreach ($tasks as $task)
                         <tr>
@@ -62,6 +63,11 @@
                             <td>
                                 <a href="/deletetask/{{$task->id}}" class="btn btn-danger">Delete</a>
                             </td>
+                            <!-- Update Option Start -->
+                            <td>
+                                <a href="/updatetask/{{$task->id}}" class="btn btn-warning">Update</a>
+                            </td>
+                            <!-- Update Option End -->
                         </tr>
                         @endforeach
                     </tbody>
