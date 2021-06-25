@@ -418,6 +418,9 @@
             <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                 <h1>Daily Task Application</h1>
             </div>
+            <div class="flex justify-center pt-8 sm:pt-0">
+                <a href="/task" style="color: white;" class="btn btn-primary">View Task</a>
+            </div>
         </div>
     </div>
     </div>
