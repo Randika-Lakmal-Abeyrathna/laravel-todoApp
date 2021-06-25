@@ -18,13 +18,32 @@ class TaskController extends Controller
         $task->task = $request->task;
         $task->save();
 
-        $$data = task::all();
-        return view('task')->with('tasks', $data);
+        $data = task::all();
+        return redirect()->back();
+        // return view('task')->with('tasks', $data);
     }
 
     public function loadPage()
     {
         $data = task::all();
         return view('task')->with('tasks', $data);
+    }
+
+    public function pending($id)
+    {
+        $task = task::find($id);
+        $task->iscompleted = 0;
+        $task->save();
+
+        return redirect()->back();
+    }
+
+    public function complete($id)
+    {
+        $task = task::find($id);
+        $task->iscompleted = 1;
+        $task->save();
+
+        return redirect()->back();
     }
 }

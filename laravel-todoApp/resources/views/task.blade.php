@@ -41,12 +41,23 @@
                     <th>ID</th>
                     <th>Task</th>
                     <th>Completed</th>
+                    <th></th>
                     <tbody>
                         @foreach ($tasks as $task)
                         <tr>
                             <td>{{$task->id}}</td>
                             <td>{{$task->task}}</td>
-                            <td>{{$task->iscompleted}}</td>
+                            @if ($task->iscompleted)
+                            <td>Completed</td>
+                            <td>
+                                <a href="/markaspending/{{$task->id}}" class="btn btn-primary">Mark As Pending</a>
+                            </td>
+                            @else
+                            <td>Pending</td>
+                            <td>
+                                <a href="/markascompleted/{{$task->id}}" class="btn btn-primary">Mark As Completed</a>
+                            </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

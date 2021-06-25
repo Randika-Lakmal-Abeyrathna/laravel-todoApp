@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('/task', [TaskController::class, 'loadPage']);
 
 Route::post('/savetask', [TaskController::class, 'saveData']);
+
+Route::get('/markaspending/{id}', [TaskController::class, 'pending']);
+
+Route::get('/markascompleted/{id}', [TaskController::class, 'complete']);
