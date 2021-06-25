@@ -42,6 +42,7 @@
                     <th>Task</th>
                     <th>Completed</th>
                     <th></th>
+                    <th></th>
                     <tbody>
                         @foreach ($tasks as $task)
                         <tr>
@@ -58,6 +59,9 @@
                                 <a href="/markascompleted/{{$task->id}}" class="btn btn-primary">Mark As Completed</a>
                             </td>
                             @endif
+                            <td>
+                                <a href="/deletetask/{{$task->id}}" class="btn btn-danger">Delete</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
